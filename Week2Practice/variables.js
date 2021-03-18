@@ -8,6 +8,7 @@ var word = "rec";
 var x = a + a;
 var Bulian = true;
 var $888 = 888;
+console.log(a, word, x, Bulian, $888);
 
 //2. Save a string (text) describing your current mood in a variable and print it out in console//
 
@@ -31,7 +32,7 @@ var velicina = 11;
 c = broj - brojevi - vrednost;
 d = broj * brojevi - vrednost / velicina;
 e = broj / brojevi - vrednost * velicina;
-console.log(c,d,e)
+console.log(c, d, e)
 
 //5. How many grams weight 1.2kg of bananas?//
 
@@ -80,13 +81,13 @@ console.log(result3);
 * Each variable has to start with a different type of character.
 Print them all out in the console and check their types.*/
 
-var name = "Velibor";
+var myName = "Velibor";
 var age = 36;
 var iHaveACat = false ;
-console.log(name,age,iHaveACat);
-console.log(typeof name,typeof age,typeof iHaveACat);
+console.log(myName, age, iHaveACat);
+console.log(typeof myName,typeof age,typeof iHaveACat);
 
-/* 11. Check which type are these values:
+/* 10. Check which type are these values:
 - “number”
 - true
 - null
@@ -101,7 +102,7 @@ var e = 56;
 console.log(typeof a, typeof b, typeof c, typeof d, typeof e);
 
 /*Logical operators
-12. Check how good you are at guessing the Boolean equivalent of different values using the
+11. Check how good you are at guessing the Boolean equivalent of different values using the
 console. Do you remember how to check for a Boolean equivalent of a value?*/
 
 var a = "";
@@ -113,32 +114,39 @@ var f = false;
 console.log(!!a, !! b, !!c, !!d, !!e, !!f);
 console.log(!a, !b, !c, !d, !e, !f);
 
-/* 13. Use the console to check the results you think should go in the following table:
+/* 12. Use the console to check the results you think should go in the following table:
 
 p q                         p && q       p || q
 true true                   true         true                
-true false                  true         false
-false true                  true         false
+true false                  false        true
+false true                  false        true
 false false                 false        false   */
 
-var p = true;
-var q = true;
+var p = false;
+var q = false;
 console.log(p && q);
+console.log(!(p && q));
+console.log(p || q);
+console.log(!(p || q));
 
-/* 14. If the variable age stores the information about user’s age, how we can check whether it
+/* 13. If the variable age stores the information about user’s age, how we can check whether it
 contains a correct value? Write expressions for checking:
 ● Is age negative value
 ● Is age greater than 120*/
 
-var age = 50;
-var 
-console/log(age >= 0)
+var age = 37;
+var yearOfBirth = 1984;
+var currentYear = 2021;
+console.log(currentYear - yearOfBirth === age);
+console.log(age > 0);
+console.log(age > 120);
 
-/* 15. Let’s say there are speed limitations on a motorway from 60 to 120 kilometers per hour. If
+
+/* 14. Let’s say there are speed limitations on a motorway from 60 to 120 kilometers per hour. If
 we store the current speed value in the variable speed. Write an expression which will check if
 we are driving drive safely or not? (true if we are driving safe and false if not)*/
 
-var speed = 200;
-var checkSpeed = speed >= 60 && speed <= 120;
-console.log(checkSpeed);
+var speed = 120;
+var safeSpeed = speed >= 60 && speed <= 120;
+console.log(safeSpeed);
 
