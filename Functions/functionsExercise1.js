@@ -1,5 +1,5 @@
 // 1. Write a program that calculates the maximum of two given numbers.
-
+"use strict"
 function maximum (a, b) {
     if (a > b) {
         return a;
@@ -72,7 +72,7 @@ function drawSquare (number) {
     return empty;
 }
 
-console.log(drawSquare(7));
+console.log(drawSquare(5));
 
 
 /* 6. Write a program that draws a horizontal chart representing three given values. For
@@ -152,7 +152,7 @@ console.log(calculates([2, 4, 7, 8, 7, 7, 1, 7, 2, 10 ,10]));
 
 
 /* 10. Write a program that calculates the number of appearances of a letter a in a given string.
-Modify the program so it calculates the number of both letters a and A.  *//
+Modify the program so it calculates the number of both letters a and A.  */
 
 function numberOfAppearances (string) {
     let appear = 0;
@@ -193,4 +193,4 @@ function concatenatesString (string, x) {
     return empty;
 }
 
-console.log(concatenatesString("abc", 2));
+console.log(concatenatesString("abc", 4));

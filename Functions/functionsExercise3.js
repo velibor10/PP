@@ -7,7 +7,7 @@
 function insertStringInPosition(string, string1, position) {
     let emptyString = "";
     for (i = 0; i < string.length; i++) {
-        
+        if ()
     }
     return emptyString;
 }
@@ -32,6 +32,7 @@ function joinAllElements(array) {
 
 console.log(joinAllElements([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 
+
 /* 3. Write a program to filter out falsy values from the array.
 
 [NaN, 0, 15, false, -22, '', undefined, 47, null] -> [15, -22, 47] */
@@ -39,15 +40,16 @@ console.log(joinAllElements([NaN, 0, 15, false, -22, '', undefined, 47, null]));
 function filterFalsyValues(array) {
     let emptyArr = [];
     for (let i = 0; i < array.length; i++) {
-        if (!array[i] === array[i]) {
-            emptyArr += array[i];
+        if (!!array[i] === true) {
+            emptyArr[emptyArr.length] = array[i];
         }
     }
-
     return emptyArr;
 }
 
-console.log(filterFalsyValues([NaN, 0, 15, false, -22, '', undefined, 47, null]));
+let a = [NaN, 0, 15, false, -22, '', undefined, 47, null];
+console.log(filterFalsyValues(a));
+
 
 /* 4. Write a function that reverses a number. The result must be a number.
 
