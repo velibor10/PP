@@ -11,7 +11,7 @@ function isElementInArray (e, array) {
     let empty = "no"
     for (i = 0; i < array.length; i++) {
         if (array[i] === e) {
-            empty = "yes"
+            empty = "yes";
         } 
     }
     return empty;
