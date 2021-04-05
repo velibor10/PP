@@ -95,7 +95,7 @@ average to determine the corresponding grade.
 //<70%                  D
 //<80%                  C
 //<90%                  B
-//<100%                 A   */
+//<100%                 A     */
 
 var david = 80;
 var marko = 77;
@@ -148,12 +148,6 @@ for (var a = 1; a <= 100; a++) {
         console.log(a);
     }
 }
-
-
-/*7. Write a program that intertwines two arrays. You can assume the arrays are of the same
-length.
-Input arrays: [4, 5, 6, 2], [3, 8, 11, 9]
-Output array: [4, 3, 5, 8, 6, 11, 2, 9] */
 
 
 
