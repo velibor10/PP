@@ -119,11 +119,11 @@ array2 = [3, 8, 11, 9];
 array3 = [];
 
 for (i = 0; i < array1.length; i++) {
-        if (array1[i]) {
-            array3[array3.length] = array1[i];
+    if (array1[i]) {
+        array3[array3.length] = array1[i];
         }
-        if (array2[i]) {
-            array3[array3.length] = array2[i];   
+    if (array2[i]) {
+        array3[array3.length] = array2[i];   
     }
 }
 console.log(array3);
@@ -182,17 +182,17 @@ Input: e = 78, p = 3, a = [2, -2, 33, 12, 5, 8]
 Output: [2, -2, 33, 78, 12, 5, 8] */
 
 e = 78;
-p = 0;
+p = 3;
 a = [2, -2, 33, 12, 5, 8];
 
 for (i = 0; i < a.length; i++) {
-    if (i === p) {
-        a[i] = e;
-    } else if (p > a.length) {
-        a = "error";
-    } else if (p === a.length) {
-        a = "p is equal with the length of array a";
+    let empty = [];
+    if (p > a.length) {
+        a = "Error"
+    } else if (i === p) {
+        empty[p] = e;
     }
+    empty[empty.length] = a[i];
 }
 console.log(a);
 
