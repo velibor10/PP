@@ -95,7 +95,7 @@ average to determine the corresponding grade.
 //<70%                  D
 //<80%                  C
 //<90%                  B
-//<100%                 A   */
+//<100%                 A     */
 
 var david = 80;
 var marko = 77;
@@ -148,7 +148,6 @@ for (var a = 1; a <= 100; a++) {
         console.log(a);
     }
 }
-
 
 
 
