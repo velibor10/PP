@@ -278,6 +278,8 @@ let b = 42;
 console.log(commonDivisior(a, b));
 
 
+// Modified first loop with 2 counters. Now we have only 1 for loop to solve the problem in task 12;
+
 
 function commonDivisior (num1, num2) {
 
