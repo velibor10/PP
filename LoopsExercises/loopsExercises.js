@@ -16,17 +16,16 @@ for (var i = 0; i <= 15; i++) {
     }
 }
 
+
 //2. Write a program to sum the multiples of 3 and 5 under 1000. brojevi koji su deljivi sa 3 i 5
 
 
 var sum = 0;
 
 for (var i = 0; i < 1000; i++) {
-    //zelimo da proverimo da li je broj deljiv istovremeno sa 3 i sa 5
-    //ako jeste taj broj dodamo sumi
+
     if(i % 3 === 0 && i % 5 === 0) {
-        //console.log(i) da proverimo koja je vrednost i odnosno koje vrednosti i uzima u petlji
-        sum += i;  //sum = sum + i;
+        sum += i;  
     }
 }
 console.log(sum);
