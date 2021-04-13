@@ -1,46 +1,139 @@
+"use strict"
+
 /* 1. Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A,
-E, I, O, and U.
+E, I, O, and U. */
+
+function countVowels(string) {
+
+    let counter = 0;
+
+    for (let i = 0; i < string.length; i++) {
+        
+        if (string[i] === "a" || string[i] === "e" || string[i] === "i" || string[i] === "o" || string[i] === "A" || string[i] === "E" || string[i] === "I" || string[i] === "O" || string[i] === "U") {
+            counter++;
+       
+        }
+    }
+    return counter;
+}
+
+let word = "maeioAEIOU"
+
+console.log(countVowels(word));
+
 
 /* 2. Write a function that combines two arrays by alternatingly taking elements.
-[`a`,`b`,`c`], [1, 2, 3] -&gt; [`a`, 1,`b`,2, `c`, 3].
+[`a`,`b`,`c`], [1, 2, 3] -&gt; [`a`, 1,`b`,2, `c`, 3]. */
+
+function alternatingElements(array1, array2) {
+
+    let emptyArray = [];
+
+    for (let i = 0, j = 0; i < array1.length, j < array2.length; i++, j++) {
+        emptyArray[emptyArray.length] = array1[i];
+        emptyArray[emptyArray.length] = array2[j];
+    
+    }
+    return emptyArray;
+}
+
+let arr1 = ["a", "b", "c"]
+let arr2 = [1, 2, 3];
+console.log(alternatingElements(arr1, arr2));
+
 
 /* 3. Write a function that rotates a list by k elements.
-For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2].
+For example [1,2,3,4,5,6] rotated by two becomes [3,4,5,6,1,2]. */
 
-/* 4. Write a function that takes a number and returns array of its digits.
+function rotatesList (list, k) {
+
+    let emptyArray = [];
+
+    for (let i = k; i < list.length; i++) {
+        emptyArray += list[i];
+    }
+    for (let j = 0; j < k; j++) {
+        emptyArray += list[j];
+    }
+    return emptyArray;
+}
+
+let arr = [1, 2, 3, 4, 5, 6,];
+let x = 2;
+
+console.log(rotatesList(arr, x));
+
+
+
+
+/* 4. Write a function that takes a number and returns array of its digits. */
+
+function numberToArrayOfDigits (number) {
+
+    let emptyArray = [];
+    let string = number + "";
+
+    for (let i = 0; i < string.length; i++) {
+        
+        if (string[i] !== ".") {
+            emptyArray[emptyArray.length] = string[i];
+        }
+    }
+    return emptyArray;
+}
+
+let x = 1234.56789;
+
+console.log(numberToArrayOfDigits(x));
+
 
 /* 5. Write a program that prints a multiplication table for numbers up to 12.
 
-/* 6. Write a function to input temperature in Centigrade and convert to Fahrenheit.
 
-/* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
-elements.
+/* 6. Write a function to input temperature in Centigrade and convert to Fahrenheit. */
 
-/* 8. Write a function to find the maximum and minimum elements. Function returns an array.
-
-/* 9. Write a function to find the median element of array.
-
-// 10. Write a function to find the element that occurs most frequently.
-
-let arr = ["a", "b", "a", "a", "c", "b"];
-let uniqueEl = [];
-
-for (let i = 0; i < arr.length; i++) {
-    let isExists = false;
-    for (let j = 0; j < uniqueEl.length; j++) {
-        if (arr[i] === uniqueEl[j]) {
-            isExists = true;
-            break;
-        }
-    }
-    if (!isExists) {
-        uniqueEl[uniqueEl.length] = arr[i];
-    }
+function centigradeToFahrenheit (temperature) {
+    return temperature * 9 / 5 + 32;
 }
 
-console.log(uniqueEl);
+let temp = 100;
+
+console.log(centigradeToFahrenheit(temp));
 
 
+/* 7. Write a function to find the maximum element in array of numbers. Filter out all non-number
+elements. */
+
+
+function maximumElementOfArray (array) {
+
+    let emptyArray = [];
+    let maximum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        if (typeof array[i] === "number" && !isNaN(array[i])) {
+            emptyArray[emptyArray.length] = array[i];
+        }
+    }
+    for (let j = 0; j < emptyArray.length; j++) {
+        if (emptyArray[j] > maximum) {
+            maximum = emptyArray[j];
+        }
+    }
+    return maximum;
+}
+
+let arr = [2232, 1111111, 2, 33, null, NaN, false, 0, "word", undefined];
+
+console.log(maximumElementOfArray(arr));
+
+
+/* 8. Write a function to find the maximum and minimum elements. Function returns an array. */
+
+
+/* 9. Write a function to find the median element of array. */
+
+// 10. Write a function to find the element that occurs most frequently. */
 
 
 /* 11. Write a function to find and return the first, middle and last element of an array if the array has odd number of elements. 
@@ -158,6 +251,7 @@ printed as:
 * frame *
 *********  */
 
+/*
 
 var arr = ["Hello", "World", "in", "a", "frame"];
 var letter = 0;
@@ -187,7 +281,7 @@ for(var j = 1; j <= arr.length + 2; j++){
             }
     }
 }
-console.log(result);
+console.log(result); */
 
 
 
