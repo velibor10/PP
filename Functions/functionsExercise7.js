@@ -1,3 +1,5 @@
+"use strict";
+
 /* 1. Why pay a fortune teller when you can just program your fortune yourself?
 Write a function named tellFortune that:
 ● takes 4 arguments: number of children, partner's name, geographic location, job title.
