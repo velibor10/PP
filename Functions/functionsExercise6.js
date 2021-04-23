@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 /* 1. Write a function to count vowels in a provided string. Vowels are a, e, i, o, and u as well as A,
 E, I, O, and U. */
@@ -131,7 +131,22 @@ console.log(maximumElementOfArray(arr));
 /* 8. Write a function to find the maximum and minimum elements. Function returns an array. */
 
 
+let array = [0, 1, 2, 3, 4, 5]
+let arr = [];
+let min = 0;
+let max = 0;
+
+for (let i = 0; i < array.length; i++) {
+    if (array[i] > max) {
+        max = array[i];
+    }   
+    console.log(max);
+}
+
+
+
 /* 9. Write a function to find the median element of array. */
+
 
 // 10. Write a function to find the element that occurs most frequently. */
 
@@ -282,6 +297,96 @@ for(var j = 1; j <= arr.length + 2; j++){
     }
 }
 console.log(result); */
+
+
+//najbolje je kompleksnije zadatke i probleme razbiti na manje i tako ih resavati
+
+
+
+function makeFrame(array) {                                       
+
+    let maxWordLength = 0;
+    let topAndBottomString = "";
+    let topAndBottomLength = 0;
+    let middlePart = "";
+    let spaceLength = 0
+    let spaceString = ""; 
+    let frame = "";
+
+    function makeStringFromChar (char, num) {
+        let resultString = "";
+        for (let i = 0; i < num; i++) {
+            resultString += char;
+        }
+        return resultString;
+    }
+    // find longest word
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].length > maxWordLength) {
+            maxWordLength = array[i]. length;
+        }
+    }
+    // make top and bottom strings
+    topAndBottomLength = maxWordLength + 4;
+    topAndBottomString = makeStringFromChar ("*", topAndBottomLength);
+    //create middle part
+    for (let k = 0; k < array.length; k++) {
+        spaceLength = maxWordLength - array[k].length;
+        spaceString = makeStringFromChar(" ", spaceLength);
+        middlePart += "* " + array[k] + spaceString + " *\n";
+    }
+    // create frame
+    frame = topAndBottomString + "\n" + middlePart + topAndBottomString;
+
+    return frame;
+}
+
+console.log(makeFrame(["Hello", "World", "in", "a", "frame"]));
+
+
+
+/* 15. Write a function that takes a list of strings and prints them, one per line, in a rectangular
+frame.:
+For example the list ["Hello", "World", "in", "a", "frame"] gets
+printed as:
+*********
+* Hello *
+* World *
+* in    *
+* a     *
+* frame *
+*********  */
+
+
+
+/* 16. Make program that will show report about BMI for a patient  (Usage of function literal notation and example of imediate function) */
+
+let mass = function (pressure, index) {
+    return pressure * index;
+}
+
+
+let patient = ["Petar", "Petrovic", 123456, 1905984740022];
+// this values are taken from a scale
+let heightFromInstrument = 1.8;
+let pressure = 3.65;
+let index = 20;
+
+(
+
+// Device will start when patient steps on scale
+function report () {
+    let bmi;
+    let result = "";
+
+    bmi = mass(pressure, index) / (heightFromInstrument * heightFromInstrument);
+
+    result += "Report about BMI: \n" + patient[0] + " " + patient[1] +  "\n" + "Broj kartona" + patient[2] + "\n" + "JMBG" + patient[3] + "\n" + "have index body mass:" + bmi.toFixed(2);
+
+    return console.log(result);
+
+}
+)();
 
 
 

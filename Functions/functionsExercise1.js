@@ -1,5 +1,5 @@
 // 1. Write a program that calculates the maximum of two given numbers.
-"use strict"
+"use strict";
 function maximum (a, b) {
     if (a > b) {
         return a;
