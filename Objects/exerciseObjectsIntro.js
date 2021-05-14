@@ -1,49 +1,72 @@
-// 1. Create an object that represents your favourite coffee. Please include coffee name, strength, flavour, milk, sugar, … everything you like!
+// 1. Create an object that represents your favourite coffee. 
+//Please include coffee name, strength, flavour, milk, sugar, … everything you like!
 
-let coffee = { name: "nes coffee",
+let coffee = { 
+name: "nes coffee",
 strength: "strong",
 flavour: "gold",
 milk: true,
 sugar: true,
-};
+}
 
 console.log(coffee);
 
-// 2. Create an object that represents your favourite movie. Please include title, actors, director, genre, popularity. 
 
-let movie = { name: "Notebook",
+
+// 2. Create an object that represents your favourite movie.
+// Please include title, actors, director, genre, popularity. 
+
+let movie = { 
+name: "Notebook",
 actor: "Gena Rolands",
 director: "Nick Cassavetes",
 genre: "comedy",
 popularity: "7.5",
-};
+}
 
 console.log(movie);
+
+
 
 /* 3. Write a function that creates an object that represents a project. 
 Each project is described by: description,  programming language, git repository, boolean status that says if the project is in development or not.
 Add a method that prints out the project's repository,  a method that checks if the project is written in JavaScript as well as a method that checks if the project is in development or not. */
 
 function createObject (desc, lang, gitURL, isDev) {
-    var project = {
+    let project = {
         description: desc,
         language: lang,
         gitUrl: gitURL,
-        printRepo: function(){
-            console.log(gitUrl);
+        development: isDev,
+
+        printRepo: function() {
+            console.log(gitURL);
         },
-        isJavaScript: function(){
-            return lang ==="JavaScript";
+
+        isJavaScript: function() {
+
+            return lang === "JavaScript";
+            
         },
         isDevelopment: function(){
-            return isDev ? "project in development" : "project is no in development";
+            if (isDev) {
+                console.log("Project is in development")
+            }
+            else {
+                console.log("Project is not in development");
+            }
         }
     }
     return project;
 }
 
 let calculator = createObject("calculator", "Java", "http:gitUrl", true);
-console.log(calculator);
+
+calculator.printRepo();
+
+calculator.isDevelopment();
+
+
     
 /* 4. Write a function that creates an object that represents a culinary recipe. Each recipe is described by: name, type of cuisine, complexity (value from 1 to 5), list of ingredients, preparing time, preparing instruction. 
     Add a method that prints out all the ingredients necessary for the meal preparation. 
@@ -51,29 +74,147 @@ console.log(calculator);
     Add a method that changes the type of cuisine to the given value. 
     Add a method that delete a given ingredient from the list of ingredients. */
 
-function createCulinaryRecipe (name, cuisine, complexity, ingredients, time, instruction) {
-    return {
-        name: name,
-        typeOfCuisine: italianCuisine,
-        complexity: complexity,
-        listOfIngredients: ingredients,
-        preparingTime: time,
-        preparingInstruction: instruction,
-        necessearyIngredients: function(){
-            console.log(listOfIngredients);
+
+function createCulinaryRecipe ($name, $cuisine, $complexity, $ingredients, $time, $instruction) {
+    recipe = {
+        name: $name,
+        typeOfCousine: $cuisine,
+        complexity: $complexity,
+        listOfIngredients: $ingredients,
+        preparingTime: $time,
+        preparingInstruction: $instruction,
+
+        printIngredients: function () {
+            console.log($ingredients);
         },
-        canBePrepared: function(){
-            if (preparingTime < 15) {
-                return true;
-            } else {
-                return false;
+
+        preparingTime15Min: function () {
+            if ($time <= 15) {
+                console.log("Meal can be prepared in 15 minutes")
+            }
+            else {
+                console.log("Meal can't be prepared in 15 minutes");
             }
         },
-        changeTypeOfCuisine: function(newCuisine){
-            return recipe.typeOfCuisine = newCuisine;
+
+        changingCousin: function (newCousine) {
+            return recipe.typeOfCousine = newCousine;
         },
-        deleteIngridients: function(ingredients) {
+
+        deletingGivenIngridient: function (givenIngredient) {
+            let newIngrident = [];
+            for (let i = 0; i < recipe.listOfIngredients.length; i++) {
+                if (recipe.listOfIngredients[i] !== givenIngredient) {
+                    newIngrident[newIngrident.length] = recipe.listOfIngredients[i];
+                }
+            }
+            recipe.listOfIngredients = newIngrident.slice();
+        }
+    
+    }
+    return recipe;
+}
+
+
+recipes = createCulinaryRecipe ("Hamburger", "Leskovacka", 5, ["meat", "spice", "paprika", "onion"], 15, "Make hamburger and bake it 10 minutes at normal heat");
+
+console.log(recipe);
+
+recipe.printIngredients();
+
+console.log("---------------------------------------\n");
+
+recipe.preparingTime15Min();
+
+console.log("---------------------------------------\n");
+
+recipe.changingCousin("German");
+
+recipe.deletingGivenIngridient("onion");
+
+console.log(recipe);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var rName = "Apple pie";
+var rType = "Flour food";
+var rComplex = 3;
+var rIngredients = ["flour", "water", "eggs", "apple"];
+var rTime = 45;
+var rInstruction = "Bake the pie for exactly 45 minutes";
+var cousine = "Japan ciusine";
+var ingredientForRemove = "eggs";
+
+(
+    function createRecipe($Name, $TypeOfCuisine, $Comlexity, $Ingredients, $PreparingTime, $Instruction, cousine, ingredientForRemove) {
+
+        var recipe;
+
+        recipe = {
+            recipeName: $Name,
+            typeOfCuisine: $TypeOfCuisine,
+            comlexity: $Comlexity,
+            ingredients: $Ingredients,
+            preparingTime: $PreparingTime,
+            instruction: $Instruction,
+
+            //Metods
+
+            ingredientsOfMeal: function () {
+                console.log($Ingredients.join(", "));
+            },
+
+            prepTime: function () {
+                if ($PreparingTime <= 15) {
+                    console.log("Meal can be prepared for 15 minuts");
+                }
+                else {
+                    console.log("Meal can't be prepared for 15 minuts");
+                }
+            },
+
+            changeCousine: function () {
+                recipe.typeOfCuisine = cousine;
+            },
+
+            removeIngredient: function () {
+                var changedArray = [];
+                for (var i = 0; i < recipe.ingredients.length; i++) {
+                    if (recipe.ingredients[i] != ingredientForRemove) {
+                        changedArray[changedArray.length] = recipe.ingredients[i];
+                    }
+                }
+
+                recipe.ingredients = changedArray;
+            },
 
         }
+
+        console.log(recipe);
+        console.log("\n");
+        console.log("Meal ingredients:") + recipe.ingredientsOfMeal();
+        console.log("\n");
+        console.log("Preparing time:") + recipe.prepTime();
+        console.log("\n");
+        console.log("Cuisine was changed to: " + cousine);
+        recipe.changeCousine();
+        console.log(recipe);
+        console.log("\n");
+        console.log("Remove " + ingredientForRemove + " from ingredients");
+        recipe.removeIngredient();
+        console.log(recipe);
     }
-}
+)(rName, rType, rComplex, rIngredients, rTime, rInstruction, cousine, ingredientForRemove)
