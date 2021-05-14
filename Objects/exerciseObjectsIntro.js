@@ -133,4 +133,3 @@ recipe.changingCousin("German");
 recipe.deletingGivenIngridient("onion");
 
 console.log(recipe);
-
