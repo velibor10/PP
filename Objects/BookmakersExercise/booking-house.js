@@ -3,7 +3,7 @@
     // Constructor functions   
     //COUNTRY
 
-    var continent = {
+    let continent = {
         europe: "EU",
         asia: "AS",
         africa: "AF",
@@ -45,14 +45,14 @@
         this.dateOfBirth = new Date(dateOfBirth);
 
         this.numberOfYears = function () {
-            var result;
-            var today = new Date();
+            let result;
+            let today = new Date();
             result = today.getFullYear() - this.dateOfBirth.getFullYear();
             return result;
         }
 
         this.getData = function () {
-            var result = "";
+            let result = "";
             result += this.name + " " + this.surname + ", " + this.numberOfYears();
             return result;
         }
@@ -83,7 +83,7 @@
         }
 
         this.getData = function () {
-            var result = "";
+            let result = "";
             result += this.country.name + ", " + this.expectedWin().toFixed(2) + " eur, " + this.person.getData();
             return result;
         };
@@ -116,7 +116,7 @@
         this.number = number;
 
         this.getData = function () {
-            var result = "";
+            let result = "";
             result += this.street + " " + this.number + ", " + this.postalCode + " " + this.city + ", " + this.country.name;
             return result;
         }
@@ -140,7 +140,7 @@
         }
 
         this.getData = function () {
-            var result = "";
+            let result = "";
             result += this.address.street + ", " + this.address.postalCode + " " + this.address.city + ", sum of all bets: " + this.getSumOfAllBets();
             return result;
         };
@@ -173,7 +173,7 @@
             this.listOfBettingPlaces.push(bettingPlace);
         };
         this.getData = function () {
-            var result = "";
+            let result = "";
             result += "Football World Cup Winner, " + this.listOfBettingPlaces.length + " betting places, " + this.numberOfPlayers() + " bets" + "\n\t";
             this.listOfBettingPlaces.forEach(function (bettingPlace){
                 result += "\t" + bettingPlace.getData() + "\n";
@@ -184,8 +184,8 @@
             return result + this.playersFromSerbia();
         };
         this.numberOfPlayers = function () {
-            var result = 0;
-            for (var i = 0; i < this.listOfBettingPlaces.length; i++) {
+            let result = 0;
+            for (let i = 0; i < this.listOfBettingPlaces.length; i++) {
                 result += this.listOfBettingPlaces[i].listOfPlayers.length;
             }
             return result;
@@ -199,13 +199,13 @@
            return "There are " + count + " bets on Serbia";
         }
         //this.playerInfo = function() {
-        //    var result = "";
-        //    for (var i = 0; i < maxbet.listOfBettingPlaces.length; i++) {
+        //    let result = "";
+        //    for (let i = 0; i < maxbet.listOfBettingPlaces.length; i++) {
         //        result += maxbet.listOfBettingPlaces[i].getData() + "\n\t\t" + playerInf();
         //    }
         //  function playerInf() {
-        //      var result = "";
-        //      for (var j = 0; j < maxbet.listOfBettingPlaces[i].listOfPlayers.length; j++) {
+        //      let result = "";
+        //      for (let j = 0; j < maxbet.listOfBettingPlaces[i].listOfPlayers.length; j++) {
         //          if (j !==  maxbet.listOfBettingPlaces[i].listOfPlayers.length - 1) {
         //              result += maxbet.listOfBettingPlaces[i].listOfPlayers[j].getData() + " years" + "\n\t\t";
         //          }
@@ -232,15 +232,15 @@
     }
 
     // TESTING
-    var maxbet = new BettingHouse("fudbal");
+    let maxbet = new BettingHouse("fudbal");
     let player1 = createPlayer ("Petar", "Petrovic", "11/25/1980", 15000, "SR", 40, continent.europe)
     let player2 = createPlayer ("Jovan", "Mitrovic", "03/15/1975", 20000, "SR", 40, continent.europe)
     let player3 = createPlayer ("Petar", "Petrovic", "11/25/1980", 30000, "GR", 40, continent.europe)
     let player4 = createPlayer ("Petar", "Petrovic", "11/25/1980", 40000, "SR", 40, continent.europe)
     
    
-    var maxbetNoviSad = createBettingPlace("SR", 20, continent.europe,"Novi Sad", 21000, "Bul. Evrope", 12);
-    var maxbetBeograd = createBettingPlace("SR", 10, continent.europe,"Beograd", 11000, "Pozeska", 120);
+    let maxbetNoviSad = createBettingPlace("SR", 20, continent.europe,"Novi Sad", 21000, "Bul. Evrope", 12);
+    let maxbetBeograd = createBettingPlace("SR", 10, continent.europe,"Beograd", 11000, "Pozeska", 120);
     maxbetNoviSad.addPlayer(player1);
     maxbetNoviSad.addPlayer(player2);
     maxbetBeograd.addPlayer(player3);
