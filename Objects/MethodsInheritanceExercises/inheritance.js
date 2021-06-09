@@ -57,22 +57,23 @@ function Employee (name, surname, job, salary) {
     
     this.job = job;
     this.salary = salary;
-
-    Employee.prototype.getData = function () {
-        return this.name + " " + this.surname + " " + this.salary + "$.";
-    }
-    Employee.prototype.getSalary = function () {
-        console.log(this.salary);
-    }
-
-    Employee.prototype.increaseSalary = function (salary) {
-        
-        return this.salary += (this.salary * 0.1);
-    }
 }
 
 Employee.prototype = Object.create(Person.prototype);
 Employee.prototype.constructor = Employee;
+
+Employee.prototype.getData = function () {
+    return this.name + " " + this.surname + " " + this.salary + "$.";
+}
+Employee.prototype.getSalary = function () {
+    console.log(this.salary);
+}
+
+Employee.prototype.increaseSalary = function (salary) {
+    
+    return this.salary += (this.salary * 0.1);
+}
+
 
 function Developer (name, surname, job, salary, specialization) {
 
@@ -88,14 +89,14 @@ function Developer (name, surname, job, salary, specialization) {
     
     this.specialization = specialization;
 
-    Developer.prototype.getSpecialization = function () {
-        console.log(this.specialization);
-    }
-
 }
 
 Developer.prototype = Object.create(Employee.prototype);
 Developer.prototype.constructor = Developer;
+
+Developer.prototype.getSpecialization = function () {
+    console.log(this.specialization);
+}
 
 function Manager (name, surname, job, salary, specialization, department) {
 
@@ -110,19 +111,22 @@ function Manager (name, surname, job, salary, specialization, department) {
     Developer.call (this, name, surname, job, salary, specialization);
     
     this.department = department;
-
-    Manager.prototype.getDepartment = function () {
-        console.log(department);                           // Ovde nesto nije u redu, ne znam zasto;
-    }
-
-    Manager.prototype.changeDepartment = function (department) {
-        return this.department = department;
-    }
     
 }
 
 Manager.prototype = Object.create(Developer.prototype);
 Manager.prototype.constructor = Manager;
+
+
+Manager.prototype.getDepartment = function () {
+    console.log(this.department);
+}
+
+Manager.prototype.changeDepartment = function (department) {
+    return this.department = department;
+}
+
+
 
 
 
@@ -134,6 +138,7 @@ Manager.prototype.constructor = Manager;
  let laza = new Employee ("laza", "lazic", "supervisor",100000);
  let mika = new Developer ("mika", "mikic", "developer", 110000, "JS");
  let jova = new Manager ("jova", "jovanovic", "manager", 120000, "QA", "HR");
+ let marko = new Manager ("marko", "markovic", "hr manager", 130000, "Python","Executive Director");
 
  console.log(pera);
  console.log(laza);
@@ -141,10 +146,12 @@ Manager.prototype.constructor = Manager;
  console.log(jova);
 
  mika.getSpecialization();
- jova.getSpecialization();
 
-jova.getDepartment();    //// Da proverim zasto nece da pozove funkciju
+jova.getDepartment();
+
 console.log(jova.changeDepartment("Board"));
+
+jova.getDepartment();
 
 console.log(laza.getData());
 console.log(mika.getData());
@@ -160,11 +167,6 @@ console.log(jova.increaseSalary());
 
 
 
-let a = function () {
-    console.log("auuuuuuuuuuuuuuuuu");
-}
-
-a();
 
 
 
