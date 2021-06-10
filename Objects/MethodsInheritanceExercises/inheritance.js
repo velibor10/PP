@@ -1,7 +1,9 @@
 'use strict';
 
 /*
-Employees and Managers
+Employees and Managers 
+
+Exercise done with old inheritance model using Constructor classes, call and this from parent class
 
 1. Create constructor functions with properties representing the following:
 Person: name, surname
@@ -29,6 +31,14 @@ function Person (name, surname) {
 
     if (!surname) {
         throw new Error ("Surname must be declared");
+    }
+
+    if (typeof name !== "string") {
+        throw new Error ("Name must be a text");
+    }
+
+    if (typeof surname !== "string") {
+        throw new Error ("Surname must be a text");
     }
 
     this.name = name;
@@ -98,7 +108,7 @@ Developer.prototype.getSpecialization = function () {
     console.log(this.specialization);
 }
 
-function Manager (name, surname, job, salary, specialization, department) {
+function Manager (name, surname, job, salary, department) {
 
     if (!department) {
         throw new Error ("Department must be declared");
@@ -108,13 +118,13 @@ function Manager (name, surname, job, salary, specialization, department) {
         throw new Error ("Department must be a text");
     }
 
-    Developer.call (this, name, surname, job, salary, specialization);
+    Employee.call (this, name, surname, job, salary);
     
     this.department = department;
     
 }
 
-Manager.prototype = Object.create(Developer.prototype);
+Manager.prototype = Object.create(Employee.prototype);
 Manager.prototype.constructor = Manager;
 
 
@@ -137,8 +147,8 @@ Manager.prototype.changeDepartment = function (department) {
  let pera = new Person ("pera", "peric");
  let laza = new Employee ("laza", "lazic", "supervisor",100000);
  let mika = new Developer ("mika", "mikic", "developer", 110000, "JS");
- let jova = new Manager ("jova", "jovanovic", "manager", 120000, "QA", "HR");
- let marko = new Manager ("marko", "markovic", "hr manager", 130000, "Python","Executive Director");
+ let jova = new Manager ("jova", "jovanovic", "manager", 120000, "HR");
+ let marko = new Manager ("marko", "markovic", "hr manager", 130000, "Executive Director");
 
  console.log(pera);
  console.log(laza);
@@ -151,8 +161,6 @@ jova.getDepartment();
 
 console.log(jova.changeDepartment("Board"));
 
-jova.getDepartment();
-
 console.log(laza.getData());
 console.log(mika.getData());
 console.log(jova.getData());
@@ -164,6 +172,7 @@ jova.getSalary();
 console.log(laza.increaseSalary());
 console.log(mika.increaseSalary());
 console.log(jova.increaseSalary());
+
 
 
 
