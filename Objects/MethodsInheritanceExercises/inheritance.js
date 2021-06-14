@@ -220,7 +220,7 @@ showStars which prints out the number of stars */
 
 
 console.log("\n");
-console.log("Task1 Employees and Managers");
+console.log("Task2 Applications");
 console.log("\n");
 
 
@@ -262,7 +262,7 @@ Applications.prototype.isCCLicence = function () {
 }
 
 Applications.prototype.like = function () {
-    console.log(this.stars = this.stars + 1);
+    console.log(this.stars += 1);
 }
 
 Applications.prototype.showStars = function () {
@@ -295,7 +295,7 @@ WebApp.prototype = Object.create(Applications.prototype);
 WebApp.prototype.constructor = WebApp;
 
 WebApp.prototype.getData = function () {
-    console.log("NAME: " + this.name + ", URL: " + this.url + ", TECH: " + this.technologies + ", LICENCE: " + this.licence + ", STARS: " + this.stars);
+    console.log("NAME: " + this.name + ", LICENCE: " + this.licence + ", STARS: " + this.stars + ", URL: " + this.url + ", TECH: " + this.technologies);
 }
 
 WebApp.prototype.reactBased = function () {
