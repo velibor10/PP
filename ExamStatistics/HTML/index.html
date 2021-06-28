@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/main.css">
+</head>
+
+<body>
+
+    <section class="page">
+
+        <h1>Exam statistics</h1>
+
+        <section class="top">
+
+            <h3>Exam statistic June</h3>
+
+            <p class="para1">Total students: <span>10</span></p>
+
+            <div class="upper">
+
+                <p class="passed">PASSED</p>
+
+                <p class="passedNumber"></p>
+
+
+            </div>
+
+            <div class="bot">
+
+                <p class="failed">FAILED</p>
+
+                <p class="failedNumber"></p>
+
+            </div>
+
+        </section>
+
+        <form>
+
+            <select name="subject" id="subjectDropDownList">
+
+                <option value="JavaScript">JavaScript</option>
+
+                <option value="HTML">HTML</option>
+
+                <option value="CSS">CSS</option>
+
+                <option value="Bootstrap">Bootstrap</option>
+
+            </select>
+
+            <input class="first" id="studentNameAndSurname" type="text" name="name" placeholder="Name surname">
+
+            <input class="second" id="gradeInput" type="number" name="grade" placeholder="Grade">
+
+            <button id="addButton">ADD</button>
+
+        </form>
+
+        <section class="tables">
+
+            <div class="passedTable">
+
+                <table class="passTable">
+
+                    <tr id="firstRow">
+
+                        <th>PASSED</th>
+
+                        <th></th>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <div class="failedTable">
+
+                <table class="failTable">
+
+                <tr>
+
+                    <th>FAILED</th>
+
+                    <th></th>
+
+                </tr>  
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </section>
+
+    <script src="../JS/subject.js"></script>
+    <script src="../JS/student.js"></script>
+    <script src="../JS/exam.js"></script>
+    <script src="../JS/form.js"></script>
+    <script src="../JS/app.js"></script>
+</body>
+
+</html>
